@@ -1,0 +1,8 @@
+﻿  Graphics.cpp
+  Main.cpp
+C:\Users\dress\Desktop\Game Concepts\LOZII-Remake\Game\ZeldaII_Remake\ZeldaII_Remake\Main.cpp(58,12): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 7 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  ZeldaII_Remake.vcxproj -> C:\Users\dress\Desktop\Game Concepts\LOZII-Remake\Game\ZeldaII_Remake\x64\Release\ZeldaII_Remake.exe

@@ -1,0 +1,5 @@
+﻿  Graphics.cpp
+  Main.cpp
+  Generating Code...
+Main.obj : error LNK2019: unresolved external symbol _D3DCompileFromFile@36 referenced in function "void __cdecl InitPipeline(void)" (?InitPipeline@@YAXXZ)
+C:\Users\dress\Desktop\Game Concepts\LOZII-Remake\Game\ZeldaII_Remake\Debug\ZeldaII_Remake.exe : fatal error LNK1120: 1 unresolved externals

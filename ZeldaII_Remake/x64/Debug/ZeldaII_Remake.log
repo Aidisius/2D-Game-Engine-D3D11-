@@ -1,0 +1,5 @@
+﻿  Graphics.cpp
+  Main.cpp
+C:\Users\dress\Desktop\Game Concepts\LOZII-Remake\Game\ZeldaII_Remake\ZeldaII_Remake\Main.cpp(54,15): warning C4244: 'return': conversion from 'WPARAM' to 'int', possible loss of data
+  Generating Code...
+  ZeldaII_Remake.vcxproj -> C:\Users\dress\Desktop\Game Concepts\LOZII-Remake\Game\ZeldaII_Remake\x64\Debug\ZeldaII_Remake.exe
