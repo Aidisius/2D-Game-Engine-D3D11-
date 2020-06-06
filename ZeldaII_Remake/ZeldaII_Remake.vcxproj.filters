@@ -56,12 +56,10 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <None Include="PShader.hlsl">
-      <Filter>Shaders</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
     <FxCompile Include="VShader.hlsl">
+      <Filter>Shaders</Filter>
+    </FxCompile>
+    <FxCompile Include="PShader.hlsl">
       <Filter>Shaders</Filter>
     </FxCompile>
   </ItemGroup>
