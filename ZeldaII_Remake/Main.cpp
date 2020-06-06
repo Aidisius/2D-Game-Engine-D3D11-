@@ -1,7 +1,8 @@
 #include "AlteredWindows.h"
-#include "Graphics.h"
 #include "resource.h"
+#include "Game.h"
 
+bool ProcessMessage();
 
 // The procedure to deal with window-message inputs
 LRESULT CALLBACK HandleMessage(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam);
@@ -33,12 +34,12 @@ int WINAPI WinMain(HINSTANCE hInstance,
     ShowWindow(hWnd, nCmdShow);
 
     // Set up and initialize Direct3D / Graphics
-    Graphics gfx(hWnd);
+    Game game(hWnd);
 
     // Game's Main Loop
     MSG msg;
 
-    while (TRUE)
+    while (ProcessMessage())
     {
         if (PeekMessage(&msg, NULL, 0, 0, PM_REMOVE))
         {
@@ -49,7 +50,8 @@ int WINAPI WinMain(HINSTANCE hInstance,
                 break;
         }
 
-        gfx.RenderFrame();
+        game.Cycle();
+
     }
     return msg.wParam;
 }
@@ -69,4 +71,19 @@ LRESULT CALLBACK HandleMessage(HWND hWnd, UINT message, WPARAM wParam, LPARAM lP
     }
 
     return DefWindowProc(hWnd, message, wParam, lParam);
+}
+
+bool ProcessMessage()
+{
+    MSG msg;
+    while (PeekMessage(&msg, nullptr, 0, 0, PM_REMOVE))
+    {
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+        if (msg.message == WM_QUIT)
+        {
+            return false;
+        }
+    }
+    return true;
 }
