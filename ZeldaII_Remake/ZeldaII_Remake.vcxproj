@@ -191,6 +191,7 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Vec2D.h" />
     <ClInclude Include="AlteredWindows.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Graphics.h" />

@@ -19,11 +19,5 @@ void Game::GameLogicUpdate()
 
 void Game::GameGraphicsUpdate()
 {
-	for (int y = 0; y < 50; y++) {
-
-		for (int x = 0; x < Graphics::screenWidth; x++) {
-
-			gfx.AddPixelToBuffer(x, y, Colors::White);
-		}
-	}
+	gfx.AddPixelToBuffer(Jeff.GetX(), Jeff.GetY(), JeffCol);
 }
