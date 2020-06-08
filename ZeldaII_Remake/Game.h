@@ -1,13 +1,14 @@
 #pragma once
 #include "Graphics.h"
 #include "Vec2D.h"
+#include <string>
 
 
 class Game
 {
 public:
 	// Constructor and destructor
-	Game(HWND hWnd);
+	Game(HWND& hWnd);
 	Game(const Game&) = delete;
 	Game operator=(const Game) = delete;
 
@@ -21,6 +22,5 @@ public:
 private:
 	// Variables
 	Graphics gfx;
-	Vec2DInt Jeff = {0, 0};
-	Color JeffCol = {120, 12, 75};
+	Sprite Link = {"LinkStanding.bmp"};
 };

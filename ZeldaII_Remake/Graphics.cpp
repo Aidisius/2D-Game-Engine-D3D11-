@@ -14,7 +14,7 @@ using Microsoft::WRL::ComPtr;
 Graphics::Graphics(HWND& hWnd)
 {
     assert(hWnd != nullptr);
-
+    
     // Create a struct to hold information about the swap chain
     DXGI_SWAP_CHAIN_DESC pSwapChainDesc = {};
     
@@ -237,5 +237,37 @@ void Graphics::AddPixelToBuffer(int x, int y, Color c)
     assert(y >= 0);
     assert(y < int(Graphics::screenHeight));
     pPixelBuffer[Graphics::screenWidth * y + x] = c;                   // Change the color of a pixel on the PixelBuffer to be rendered as a frame later
+}
+
+void Graphics::DrawSprite(Sprite& spr, Color chroma)
+{
+    // Ensure sprite doesn't go off screen
+    if (spr.GetPos().x < 0) {
+
+        spr.SetPos(0, spr.GetPos().y);
+    }
+    if (spr.GetPos().x > Graphics::screenWidth) {
+
+        spr.SetPos(Graphics::screenWidth, spr.GetPos().y);
+    }
+    if (spr.GetPos().y < spr.GetHeight()) {
+
+        spr.SetPos(spr.GetPos().x, spr.GetHeight());
+    }
+    if (spr.GetPos().y > Graphics::screenHeight) {
+
+        spr.SetPos(spr.GetPos().x, Graphics::screenHeight);
+    }
+
+    for (int sy = 0; sy < spr.GetHeight(); sy++) {
+
+        for (int sx = 0; sx < spr.GetWidth(); sx++) {
+
+            const Color srcPixel = spr.GetPixel(sx, sy);
+            if (srcPixel != chroma) {
+                AddPixelToBuffer(spr.GetPos().x + sx, spr.GetPos().y + sy, srcPixel);
+            }
+        }
+    }
 }
 

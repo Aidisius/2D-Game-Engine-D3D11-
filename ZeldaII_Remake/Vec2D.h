@@ -54,22 +54,6 @@ public:
 
 public:
 	// Functions
-	float GetX()
-	{
-		return x;
-	}
-	float GetY()
-	{
-		return y;
-	}
-	void SetX(float x_in)
-	{
-		x = x_in;
-	}
-	void SetY(float y_in)
-	{
-		y = y_in;
-	}
 	float DistSquaredFromOrigin()
 	{
 		return x * x + y * y;
@@ -97,7 +81,7 @@ public:
 		return { x / length, y / length };
 	}
 
-private:
+public:
 	// Variables
 	float x;
 	float y;
@@ -161,22 +145,6 @@ public:
 
 public:
 	// Functions
-	int GetX()
-	{
-		return x;
-	}
-	int GetY()
-	{
-		return y;
-	}
-	void SetX(int x_in)
-	{
-		x = x_in;
-	}
-	void SetY(int y_in)
-	{
-		y = y_in;
-	}
 	int DistSquaredFromOrigin()
 	{
 		return x * x + y * y;
@@ -186,7 +154,7 @@ public:
 		return std::sqrt(DistFromOrigin());
 	}
 	
-private:
+public:
 	// Variables
 	int x;
 	int y;

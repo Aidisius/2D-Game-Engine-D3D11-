@@ -1,13 +1,13 @@
 #pragma once
 #include "AlteredWindows.h"
-#include "PixelColors.h"
 #include <d3d11.h>
-#include <d3dcompiler.h>
 #include <wrl.h>
+#include "PixelColors.h"
+#include "Sprite.h"
 #include <cassert>
 
 #pragma comment (lib, "d3d11.lib")
-#pragma comment (lib, "d3dcompiler.lib")
+
 
 class Graphics
 {
@@ -30,6 +30,8 @@ public:
 	{
 		AddPixelToBuffer(x, y, {unsigned char(r), unsigned char(g), unsigned char(b)});
 	}
+
+	void DrawSprite(Sprite& spr, Color chroma);
 
 private:
 	// Pointers
